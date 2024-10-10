@@ -41,8 +41,6 @@ X = df.loc[df['Brand'] == 'Innjoo', ['RAM', 'Storage', 'Screen']].to_numpy()    
 X_transpose = X.T  # Transpose of X
 XTX = X_transpose @ X  # Matrix-matrix multiplication between X.T and X
 XTX_inv = np.linalg.inv(XTX)  # Compute the inverse of XTX.
-# Create the array y
-y = np.array([1100, 1300, 800, 900, 1000, 1100])
-# Compute w
-w = XTX_inv @ X_transpose @ y  # Multiply XTX_inv with X.T, then multiply with y
+y = np.array([1100, 1300, 800, 900, 1000, 1100])    # Create the array y
+w = XTX_inv @ X_transpose @ y  # Compute w
 print(np.sum(w))    # Q7
